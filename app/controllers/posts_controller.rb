@@ -13,6 +13,7 @@ class PostsController < ApplicationController
     end
 
     def create
+      
       @post = current_user.posts.new(post_params)
       
       
@@ -31,6 +32,8 @@ class PostsController < ApplicationController
 
 
     def destroy
+      
+
       @post = Post.find(params[:id])
       @post.destroy
       redirect_to action: "index"
