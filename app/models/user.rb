@@ -30,10 +30,10 @@ where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
 end
 end
 
-after_create :welcome_email
-def welcome_email
-UserMailer.welcome_email(self).deliver_now
-end
+#after_create :welcome_email
+#def welcome_email
+#UserMailer.welcome_email(self).deliver_now
+#end
 
 
 
