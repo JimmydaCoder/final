@@ -35,8 +35,12 @@
           <% end %>
 
 
+                 <%= if post.user_id == current_user.id  
 
-                 <%= link_to image_tag('/btnDeletePost.png', border: 0, :size => "30x30"), post, :method => :delete, :confirm => "Are you sure?" %>
+                 link_to image_tag('/btnDeletePost.png', border: 0, :size => "30x30"), post, :method => :delete, :confirm => "Are you sure?" 
+                 
+                 end 
+                 %>
 
 
 

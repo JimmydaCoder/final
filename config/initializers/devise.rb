@@ -13,6 +13,8 @@ Devise.setup do |config|
   config.omniauth :facebook, "1258828454470658", "c7699128b8ca6b565e05730e070abefd"
   config.omniauth :facebook, "1258828454470658", "c7699128b8ca6b565e05730e070abefd", token_params: { parse: :json }
   
+  config.omniauth :facebook, "*****", "*****",
+  callback_url: "https://jimmyfinalproj.herokuapp.com"
 
   # The secret key used by Devise. Devise uses this key to generate
   #random tokens. Changing this key will render invalid all existing
