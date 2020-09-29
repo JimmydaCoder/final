@@ -1,13 +1,14 @@
  <% if user_signed_in? %>
  <div>  <h1 style="color:blue">  <%= "Welcome back #{(current_user.email)}" %> </h2> </div>
 <% end %>
+<%= button_to "logout", destroy_user_session_path, method: :delete  %>
 
 <h1>All Posts</h1>
 
 
 
 
-<%= button_to "logout", destroy_user_session_path, method: :delete  %> <%= link_to "Create a New Post", new_post_path, class: "new+post" %>
+<%= link_to image_tag('/btnCreatePost.png', border: 0, :size => "50x50"), new_post_path, class: "new+post" %>
 
 
 
@@ -19,7 +20,24 @@
 
 
      <h3> <%= post.body %></h3>
-                 <%= link_to 'Destroy', post, :method => :delete, :confirm => "Are you sure?" %>
+          
+          <h3>  <%= Like.where(post_id: post.id).count %> likes</h3>
+
+
+          <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+
+          <% if pre_like %>
+          <%= link_to image_tag('/btnLikeFilled.png', border: 0, :size => "30x30"), post_like_path(post_id: post.id, id: pre_like), method: :delete %>
+
+          <% else %>
+          <%= link_to image_tag('/btnLike.png', border: 0, :size => "30x30"), post_likes_path(post_id: post.id), method: :post %>
+
+          <% end %>
+
+
+
+                 <%= link_to image_tag('/btnDeletePost.png', border: 0, :size => "30x30"), post, :method => :delete, :confirm => "Are you sure?" %>
+
 
 
     </li>

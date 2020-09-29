@@ -36,13 +36,19 @@ class PostsController < ApplicationController
 
       @post = Post.find(params[:id])
       @post.destroy
-      redirect_to action: "index"
+      redirect_back(fallback_location: root_path) 
       flash.notice = "Post Deleted!"
     end
+
+    
+
+   
 
 
     def post_params
       params.require(:post).permit(:body)
     end
+
+
 
 end
