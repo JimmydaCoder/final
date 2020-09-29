@@ -10,11 +10,12 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
 
-  config.omniauth :facebook, "624803661523880", "2bdb7d62ef57b8c0d99c03fbd36c0dd1"
-  config.omniauth :facebook, "624803661523880", "2bdb7d62ef57b8c0d99c03fbd36c0dd1", token_params: { parse: :json }
+  config.omniauth :facebook, "1258828454470658", "c7699128b8ca6b565e05730e070abefd"
+  config.omniauth :facebook, "1258828454470658", "c7699128b8ca6b565e05730e070abefd", token_params: { parse: :json }
+  
 
   # The secret key used by Devise. Devise uses this key to generate
-  # random tokens. Changing this key will render invalid all existing
+  #random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
