@@ -1,26 +1,9 @@
- <% if user_signed_in? %>
- <div>  <h1 style="color:blue">  Welcome back <%= link_to current_user.email, user_path(current_user.id), method: :get %> </h2> </div>
-<% end %>
-<%= button_to "logout", destroy_user_session_path, method: :delete  %>
+<h1> <%= @user.email  %> </h1>
 
-<h1>All Posts</h1>
-
-
-
-
-
-<%= link_to image_tag('/btnCreatePost.png', border: 0, :size => "50x50"), new_post_path, class: "new+post" %>
-
-
-
-<ul id="posts">
-  <% @posts.each do |post| %>
+<% @user.posts.each do |post| %>
     <li>
 
-         <h2 style="color:red">  Created by  <%= link_to post.user.email, user_path(post.user.id), method: :get %>
- 
-         
-         </h2> 
+         <h2 style="color:red"> All the Posts that <%= @user.email %> created </h2> 
 
 
      <h3> <%= post.body %></h3>
@@ -50,5 +33,3 @@
 
     </li>
   <% end %>
-</ul>
-

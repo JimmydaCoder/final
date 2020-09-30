@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 
 gem 'sendgrid-ruby'
+gem "bootstrap-sass-rails", "~> 2.2.2.0"
 
 gem 'omniauth-facebook'
 
